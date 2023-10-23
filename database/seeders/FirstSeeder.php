@@ -27,7 +27,7 @@ class FirstSeeder extends Seeder
             'role' => 'admin'
         ]);
         User::create([
-            'name' => 'Temizen Bank',
+            'name' => 'Tenizen Bank',
             'username' => 'tenizen',
             'password' => Hash::make('bank'),            
             'role' => 'bank'
