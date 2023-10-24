@@ -12,7 +12,7 @@ class TransactionController extends Controller
     //
     public function payNow(){
         $status = 'diambil';
-        $order_id = 'INV_' . Auth::user()->id . date('Ymdhis');
+        $order_id = 'INV_' . Auth::user()->id . date('Y-m-d H:i:s');
         $carts = Transaction::where('user_id', Auth::user()->id)->where('status', 'dikeranjang')->get();
         $total_debit = 0;
 
@@ -68,16 +68,5 @@ class TransactionController extends Controller
         }
 
 
-        public function removeFromCart($id)
-        {
-            $transaction = Transaction::findOrFail($id);
-    
-            if ($transaction->user_id === Auth::user()->id) {
-                $transaction->delete();
-    
-                return redirect()->back()->with('status', 'Produk berhasil dihapus dari keranjang');
-            } else {
-                return abort(403);
-            }
-        }
+         
 }
