@@ -12,7 +12,7 @@ class TransactionController extends Controller
     //
     public function payNow(){
         $status = 'diambil';
-        $order_id = 'INV_' . Auth::user()->id . date('Y-m-d H:i:s');
+        $order_id = 'INV_' . Auth::user()->id . date('YmdHis');
         $carts = Transaction::where('user_id', Auth::user()->id)->where('status', 'dikeranjang')->get();
         $total_debit = 0;
 
