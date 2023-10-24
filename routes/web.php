@@ -24,3 +24,5 @@ Route::post('/addToCart', [App\Http\Controllers\TransactionController::class, 'a
 Route::post('/payNow', [App\Http\Controllers\TransactionController::class, 'payNow'])->name('payNow');
 Route::post('/topUpNow', [App\Http\Controllers\WalletController::class, 'topUpNow'])->name('topUpNow');
 Route::get('/download/{order_id}', [App\Http\Controllers\TransactionController::class, 'download'])->name('download');
+
+Route::post('/acceptRequest', [App\Http\Controllers\WalletController::class, 'acceptRequest'])->name('acceptRequest');
